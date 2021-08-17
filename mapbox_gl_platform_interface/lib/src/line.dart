@@ -39,6 +39,7 @@ class LineOptions {
   /// line defaults or current configuration.
   const LineOptions({
     this.lineJoin,
+    this.lineCap,
     this.lineOpacity,
     this.lineColor,
     this.lineWidth,
@@ -51,6 +52,7 @@ class LineOptions {
   });
 
   final String? lineJoin;
+  final String? lineCap;
   final double? lineOpacity;
   final String? lineColor;
   final double? lineWidth;
@@ -66,6 +68,7 @@ class LineOptions {
   LineOptions copyWith(LineOptions changes) {
     return LineOptions(
       lineJoin: changes.lineJoin ?? lineJoin,
+      lineCap: changes.lineCap ?? lineCap,
       lineOpacity: changes.lineOpacity ?? lineOpacity,
       lineColor: changes.lineColor ?? lineColor,
       lineWidth: changes.lineWidth ?? lineWidth,
@@ -88,6 +91,7 @@ class LineOptions {
     }
 
     addIfPresent('lineJoin', lineJoin);
+    addIfPresent('lineJoin', lineCap);
     addIfPresent('lineOpacity', lineOpacity);
     addIfPresent('lineColor', lineColor);
     addIfPresent('lineWidth', lineWidth);
